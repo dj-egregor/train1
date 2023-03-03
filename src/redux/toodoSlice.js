@@ -4,7 +4,7 @@ const initialState = {
   items: [],
 };
 
-const toodosSlice = createSlice({
+const todosSlice = createSlice({
   name: 'todos',
   initialState: initialState,
   reducers: {
@@ -22,5 +22,5 @@ const toodosSlice = createSlice({
   },
 });
 
-export const { addToodos, deleteTodos } = toodosSlice.actions;
-export const toodosReducer = toodosSlice.reducer;
+export const { addToodos, deleteTodos } = todosSlice.actions;
+export const todosReducer = todosSlice.reducer;
