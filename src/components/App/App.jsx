@@ -1,20 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import TodoList from 'components/TodoList';
 import { Container, Header, SearchForm, Section, Text } from 'components';
+import { getTodos } from 'redux/selectors';
 
 export const App = () => {
-  const [todos, setTodos] = useState(
-    () => JSON.parse(localStorage.getItem('todos')) || []
-  );
-
-  useEffect(() => {
-    localStorage.setItem('todos', JSON.stringify(todos));
-  }, [todos]);
-
-  const deleteTodo = id => {
-    setTodos(prevState => prevState.filter(todo => todo.id !== id));
-  };
-
+    const todos = useSelector(getTodos);
   return (
     <>
       <Header />

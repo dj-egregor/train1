@@ -2,9 +2,10 @@ import { useSelector } from 'react-redux';
 import { Grid } from 'components';
 import { GridItem } from 'components';
 import { Todo } from 'components';
+import { getTodos } from 'redux/selectors';
 
 const TodoList = () => {
-  const todos = useSelector(store => store.todos.items);
+  const todos = useSelector(getTodos);
 
   return (
     <Grid>
